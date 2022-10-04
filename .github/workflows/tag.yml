@@ -1,0 +1,36 @@
+name: my-steam-games-ext
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: Install dependencies
+      run: npm install --save-dev
+
+    - name: Lint
+      run: npm run lint
+
+    - name: Build
+      run: npm run ng build --prod
+
+    - name: Zip up artifact
+      run: |
+        cd dist
+        zip -r -p -9 dist.zip .
+        unzip -v dist.zip
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-steam-games-ext-${{github.ref_name}}.zip
+        path: dist/dist.zip
