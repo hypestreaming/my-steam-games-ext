@@ -4,8 +4,8 @@ import {TwitchAuthorization, TwitchWindow} from 'hype-twitch-types';
 import {LoggerService} from '../services/logger.service';
 import {environment} from '../../environments/environment';
 
-import pako from "pako";
-import {GoogleAnalyticsService} from "../services/google-analytics.service";
+import pako from 'pako';
+import {GoogleAnalyticsService} from '../services/google-analytics.service';
 
 interface SteamGame {
 	id: number;
@@ -33,13 +33,12 @@ export class PanelExtensionComponent implements OnInit {
 
 	hovered_game: SteamGame;
 
-	hype_logo_url = "https://extensions2.com/more/hype-network";
+	hype_logo_url = 'https://extensions2.com/more/hype-network';
 
 	constructor(private zone: NgZone, private logger: LoggerService, private ga: GoogleAnalyticsService) {
 	}
 
 	private installCallbacks(window: TwitchWindow) {
-
 		window.Twitch.ext.onAuthorized((auth: TwitchAuthorization) => {
 			this.zone.run(() => {
 				this.onAuthorized(auth);

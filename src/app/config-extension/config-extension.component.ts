@@ -1,11 +1,11 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {TwitchAuthorization, TwitchWindow} from 'hype-twitch-types';
 import {LoggerService} from '../services/logger.service';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {environment} from "../../environments/environment";
-import {GoogleAnalyticsService} from "../services/google-analytics.service";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../environments/environment';
+import {GoogleAnalyticsService} from '../services/google-analytics.service';
 
-import pako from "pako";
+import pako from 'pako';
 
 interface OwnedGame {
 	id: number;
@@ -61,7 +61,7 @@ export class ConfigExtensionComponent implements OnInit {
 	ngOnInit() {
 		this.initializeCallbacks(<any>window);
 
-		this.ga.trackPageView("Config");
+		this.ga.trackPageView('Config');
 	}
 
 	onInputChanged(e: Event) {
@@ -79,7 +79,7 @@ export class ConfigExtensionComponent implements OnInit {
 			const newBatchSize = Math.min(batchSize + 10, games.length);;
 			const subset = games.slice(0, newBatchSize);
 			const compressed = this.compressPayload(subset);
-			this.logger.log("Compressed payload for batchSize " + newBatchSize + " is " + compressed.length);
+			this.logger.log('Compressed payload for batchSize ' + newBatchSize + ' is ' + compressed.length);
 			if (compressed.length >= this.MAX_PAYLOAD_SIZE) {
 				break;
 			}
@@ -87,7 +87,7 @@ export class ConfigExtensionComponent implements OnInit {
 			batchSize = newBatchSize;
 		}
 
-		this.logger.log("Largest batch size is " + batchSize);
+		this.logger.log('Largest batch size is ' + batchSize);
 		return batchSize;
 	}
 
@@ -134,7 +134,7 @@ export class ConfigExtensionComponent implements OnInit {
 		const url = environment.apiEndpoint + '/mysteam.games.refresh';
 		this.http.post<SteamRefreshResponse>(url, params, options).subscribe((data: any) => {
 
-			this.logger.log("Got response:");
+			this.logger.log('Got response:');
 			this.logger.dir(data);
 
 			this.show_loading = false;
@@ -144,7 +144,7 @@ export class ConfigExtensionComponent implements OnInit {
 				const batchSize = this.findLargestBatchSize(data.games);
 				const subsetGames = data.games.slice(0, batchSize);
 				const binary = this.compressPayload(subsetGames);
-				this.window.Twitch.ext.configuration.set("broadcaster", "1", binary);
+				this.window.Twitch.ext.configuration.set('broadcaster', '1', binary);
 			} else {
 				this.message = 'Hmpf! It seems that your account is set to private.';
 				this.no_games_found = true;
