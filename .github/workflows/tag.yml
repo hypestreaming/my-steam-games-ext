@@ -6,7 +6,7 @@ on:
     - '*'
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -26,11 +26,11 @@ jobs:
 
     - name: Zip up artifact
       run: |
-        cd dist
+        cd dist/ext
         zip -r -p -9 dist.zip .
         unzip -v dist.zip
 
     - uses: actions/upload-artifact@v3
       with:
-        name: my-steam-games-ext-${{github.ref_name}}.zip
-        path: dist/dist.zip
+        name: my-steam-games-ext-${{github.ref_name}}
+        path: dist/ext
