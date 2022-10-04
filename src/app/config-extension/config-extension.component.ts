@@ -72,11 +72,10 @@ export class ConfigExtensionComponent implements OnInit {
 		return /^\d+$/.test(value);
 	}
 
-	private findLargestBatchSize(games: OwnedGame[]): number
-	{
+	private findLargestBatchSize(games: OwnedGame[]): number {
 		let batchSize = 0;
 		while (batchSize < games.length) {
-			const newBatchSize = Math.min(batchSize + 10, games.length);;
+			const newBatchSize = Math.min(batchSize + 10, games.length);
 			const subset = games.slice(0, newBatchSize);
 			const compressed = this.compressPayload(subset);
 			this.logger.log('Compressed payload for batchSize ' + newBatchSize + ' is ' + compressed.length);
@@ -91,8 +90,7 @@ export class ConfigExtensionComponent implements OnInit {
 		return batchSize;
 	}
 
-	private compressPayload(games: OwnedGame[]): string
-	{
+	private compressPayload(games: OwnedGame[]): string {
 		const content = {games};
 		const payload = JSON.stringify(content);
 		const compressed = pako.deflate(payload, {to: 'string', level: 9});
