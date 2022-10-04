@@ -54,7 +54,7 @@ export class PanelExtensionComponent implements OnInit {
 	}
 
 	private onAuthorized(auth: TwitchAuthorization) {
-		this.logger.log("Authorized: " + JSON.stringify(auth));
+		this.logger.log('Authorized: ' + JSON.stringify(auth));
 
 		this.hype_logo_url = 'https://extensions2.com/more/hype-network?source_extension_id=' + environment.clientId +
 			'&source_extension_name=' + environment.extensionName +
@@ -77,7 +77,7 @@ export class PanelExtensionComponent implements OnInit {
 	ngOnInit(): void {
 		this.installCallbacks(<any>window);
 
-		this.ga.trackPageView("Panel");
+		this.ga.trackPageView('Panel');
 	}
 
 	onMouseOver(game: SteamGame) {
@@ -91,12 +91,11 @@ export class PanelExtensionComponent implements OnInit {
 	}
 
 	onGameClicked(game: SteamGame, index: number) {
-		this.ga.trackEvent("My_Steam", "game_clicked", game.name);
-		this.ga.trackEvent("My_Steam", "game_index_clicked", '' + index);
+		this.ga.trackEvent('My_Steam', 'game_clicked', game.name);
 	}
 
 	onHypeClicked(): boolean {
-		this.ga.trackEvent("My_Steam", "hype_clicked", "");
+		this.ga.trackEvent('My_Steam', 'hype_clicked', '');
 		return true;
 	}
 }

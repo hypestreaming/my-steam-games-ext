@@ -8,7 +8,7 @@ import {PanelExtensionComponent} from './panel-extension/panel-extension.compone
 import {ConfigExtensionComponent} from './config-extension/config-extension.component';
 import {RouterModule, Routes} from '@angular/router';
 import {LoggerService} from './services/logger.service';
-import {GoogleAnalyticsService} from "./services/google-analytics.service";
+import {GoogleAnalyticsService} from './services/google-analytics.service';
 
 const appRoutes: Routes = [
 	{path: 'index.html', component: AppComponent},

@@ -5,10 +5,10 @@
 export const environment = {
 	production: false,
 
-	extensionName: "My Steam",
-	clientId: "wl1d1suog3vnmhkrhwow16yfwje9u6",
+	extensionName: 'My Steam',
+	clientId: 'wl1d1suog3vnmhkrhwow16yfwje9u6',
 
-	version: "2019.04",
+	version: '2019.04',
 
 	apiEndpoint: 'http://localhost:3000/api',
 };
