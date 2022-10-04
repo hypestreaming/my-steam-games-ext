@@ -1,6 +1,6 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {TwitchAuthorization, TwitchWindow} from 'hype-twitch-types';
+import {TwitchAuthorization, TwitchWindow} from 'twitch-typings';
 import {LoggerService} from '../services/logger.service';
 import {environment} from '../../environments/environment';
 

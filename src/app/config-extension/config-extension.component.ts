@@ -1,5 +1,5 @@
 import {Component, NgZone, OnInit} from '@angular/core';
-import {TwitchAuthorization, TwitchWindow} from 'hype-twitch-types';
+import {TwitchAuthorization, TwitchWindow} from 'twitch-typings';
 import {LoggerService} from '../services/logger.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
