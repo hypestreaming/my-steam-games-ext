@@ -2,8 +2,8 @@ name: my-steam-games-ext
 
 on:
   push:
-    branches:
-      - master
+    tags:
+    - '*'
 
 jobs:
   build:
