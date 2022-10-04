@@ -1,0 +1,70 @@
+<div class="config-page-body" style="padding-top: 24px; padding-bottom: 24px; line-height: 24px;">
+	<div class="config-container w-container">
+		<h1 class="heading">Welcome to My Steam!</h1>
+		<div class="config-description">
+
+			<h4 class="heading-2">Congratulations!</h4>
+
+			<div class="text-block-4">
+				You have just installed the coolest extension on Twitch.<br />
+				<br />
+				With <strong>My Steam</strong>, you can display your Steam games library to your viewers.<br />
+				<br />
+			</div>
+
+			<h4 class="heading-2">Getting Started:</h4>
+
+			<div class="text-block-4">
+				1. Enter your Steam ID: <a href="https://findmysteamid.s3.amazonaws.com/index.html" target="_blank">(Help me find my Steam ID)</a><br/>
+
+				<div style="width: 100%; padding-top: 4px;">
+					<div style="float: left; width: 320px;">
+						<input type="text" value="" style="width: 100%; padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; height: 32px;" (change)="onInputChanged($event)" />
+					</div>
+
+					<div style="float: left; margin-left: 8px;">
+						<input type="button" value="Save" style="cursor: pointer; height: 32px; border: 1px solid #ccc; padding: 4px 12px; border-radius: 4px; font-size: 12px;" (click)="onSaveClicked()"/>
+					</div>
+
+					<div style="float: left;">
+						<img src="assets/loading.gif" *ngIf="show_loading" style="width: 32px; padding-top: 6px;"/>
+					</div>
+
+					<br style="clear: both;" />
+
+					<div style="color: gray; font-size: 12px;" *ngIf="!error_message && !message">
+						We will never reveal your Steam ID to anybody.
+					</div>
+
+					<div style="color: gray; font-size: 12px;" *ngIf="message">
+						{{ message }}
+					</div>
+
+					<div style="color: red; font-size: 12px;" *ngIf="error_message">
+						{{ error_message }}
+					</div>
+
+					<div style="border: 4px solid #ccc; width: 413px; padding: 6px;" *ngIf="no_games_found">
+						<img src="assets/how-to-make-games-public.png" alt style="width: 413px; height: 200px;" />
+
+						<div style="font-size: 12px; padding-top: 14px;">
+							Ouch! Your games list is set to private on Steam. You can enable this by viewing <a href="">your profile page on Steam</a>, and changing the permissions of "Game Details" to "public".
+						</div>
+					</div>
+				</div>
+
+				<br />
+				2. Activate extension as a Panel:<br/> Visit &quot;<a href="https://www.twitch.tv/dashboard/extensions/manage" target="_blank">My Extensions</a>&quot; page
+				and activate My Stream.<br />
+				<br />
+			</div>
+
+			<div class="text-block-4">
+				That's it!<br/><br/>
+
+				We want to hear what you think of My Steam.<br/>
+				For support, or just chit-chat, please email <a href="mailto:hello@hypetalk.tv" target="_blank">hello@hypetalk.tv</a><br/>‍
+			</div>
+		</div>
+	</div>
+</div>

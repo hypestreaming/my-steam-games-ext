@@ -1,0 +1,34 @@
+<div class="panel-container">
+	<div style="padding: 4px 0 4px 4px;">
+		<div style="width: 316px; border-radius: 4px; color: white; height: 50px; text-transform: uppercase; font-family: 'Allan', cursive;">
+			<div style="text-align: center; font-size: 32px; padding-top: 10px;">
+				My Steam
+			</div>
+		</div>
+
+		<ul class="games-container">
+			<li *ngFor="let game of games; index as i;">
+				<div style="position: relative;" (mouseout)="onMouseOut(game)" (mouseover)="onMouseOver(game)">
+					<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/{{ game.id }}/header.jpg" alt [title]="game.name" />
+					<div class="game-name-container" [@visibleState]="hovered_game == game">
+						<div class="game-name" (click)="onGameClicked(game, i)">
+							{{ game.name }}
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<br style="clear: both;" />
+
+		<!--
+		<div class="footer">
+			<div style="text-align: right; margin-right: 6px;">
+				<a [href]="hype_logo_url" target="_blank" (click)="onHypeClicked()">
+					<img src="assets/hype-footer-logo.png" alt style="width: 24px; height: 24px" title="More cool stuff from Hype" />
+				</a>
+			</div>
+		</div>
+		-->
+	</div>
+</div>
