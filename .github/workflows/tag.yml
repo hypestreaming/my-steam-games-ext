@@ -24,12 +24,6 @@ jobs:
     - name: Build
       run: npm run ng build --prod
 
-    - name: Zip up artifact
-      run: |
-        cd dist/ext
-        zip -r -p -9 dist.zip .
-        unzip -v dist.zip
-
     - uses: actions/upload-artifact@v3
       with:
         name: my-steam-games-ext-${{github.ref_name}}
