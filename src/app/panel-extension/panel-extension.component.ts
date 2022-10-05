@@ -62,14 +62,17 @@ export class PanelExtensionComponent implements OnInit {
 	}
 
 	private onConfigurationChanged(window: TwitchWindow) {
-
 		const content = window.Twitch.ext.configuration.broadcaster.content.replace(/"/g, '');
 		this.logger.log('Configuration has changed: ' + content);
+                this.onNewPayload(content);
+        }
 
+        public onNewPayload(content: string) {
 		const raw = pako.inflate(atob(content), {to: 'string'});
 		const json = JSON.parse(raw);
 		this.games = json.games;
 
+                this.logger.log("Got this JSON out:");
 		this.logger.dir(json);
 	}
 

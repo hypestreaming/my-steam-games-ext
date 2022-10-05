@@ -9,6 +9,7 @@ import {ConfigExtensionComponent} from './config-extension/config-extension.comp
 import {RouterModule, Routes} from '@angular/router';
 import {LoggerService} from './services/logger.service';
 import {GoogleAnalyticsService} from './services/google-analytics.service';
+import {PreviewComponent} from './preview/preview.component';
 
 const appRoutes: Routes = [
 	{path: 'index.html', component: AppComponent},
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
 	declarations: [
 		AppComponent,
 		PanelExtensionComponent,
-		ConfigExtensionComponent
+		ConfigExtensionComponent,
+		PreviewComponent,
 	],
 	imports: [
 		HttpClientModule,

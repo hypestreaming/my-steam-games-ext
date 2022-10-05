@@ -34,7 +34,7 @@
 }
 
 .games-container li:hover {
-	transition: all 100ms;
+	transition: all 200ms;
 }
 
 .game-name-container {
@@ -45,7 +45,7 @@
 	width: 144px;
 	height: 58px;
 	color: white;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 .game-name {

@@ -1,0 +1,6 @@
+::ng-deep body {
+        width: auto !important;
+        height: auto !important;
+        color: white;
+        background-color: #777;
+}
