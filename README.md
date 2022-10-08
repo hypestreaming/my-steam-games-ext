@@ -1,7 +1,16 @@
 # My Steam Games - Twitch Extension
 
-Welcome to the Twitch-side part of My Steam Games extension. This extension is split into three parts:
+<img src="images/mysteam-screenshot-1.png" alt>
+
+**Welcome My Steam Games extension for Twitch**
+
+<img src="https://img.shields.io/github/last-commit/hypesteam/my-steam-games-ext" alt />
+<img src="https://img.shields.io/snyk/vulnerabilities/github/hypestreaming/my-steam-games-ext" alt>
+
+This extension is split into three parts:
 
 - Twitch panel extension (this repo)
 - My Steam Games server
 - Find My Steam ID helper
+
+
