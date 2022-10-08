@@ -16,7 +16,7 @@ jobs:
     - run: npm install --save-dev
     - run: npm run lint
     - run: npm run build
-    - run: zip -jrp9 my-steam-games-ext-${{github.ref_name}}.zip dist/ext/*
+    - run: (cd dist/ext && zip -j -r -9 ../../my-steam-games-ext-${{github.ref_name}}.zip *)
     - uses: xresloader/upload-to-github-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
