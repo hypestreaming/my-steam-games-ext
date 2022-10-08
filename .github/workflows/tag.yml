@@ -10,21 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-
     - uses: actions/setup-node@v1
       with:
         node-version: 16.x
-
-    - name: Install dependencies
-      run: npm install --save-dev
-
-    - name: Lint
-      run: npm run lint
-
-    - name: Build
-      run: npm run build
-
-    - uses: actions/upload-artifact@v3
+    - run: npm install --save-dev
+    - run: npm run lint
+    - run: npm run build
+    - run: zip -jrp9 my-steam-games-ext-${{github.ref_name}}.zip dist/ext/*
+    - uses: xresloader/upload-to-github-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: my-steam-games-ext-${{github.ref_name}}
-        path: dist/ext
+        file: my-steam-games-ext-${{github.ref_name}}.zip
+        tags: true
