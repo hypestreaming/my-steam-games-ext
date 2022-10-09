@@ -26,11 +26,11 @@ Start local angular server:
 npm run start
 ```
 
-You now have a local server running at [https://localhost:4200].
+You now have a local server running at https://localhost:4200
 
 When opening this url with your browser, you will get a notification that this ssl connection cannot be verified. You will need to type 'thisisunsafe' once, or click "I understand". From now on, you should be able to use the local https server without problems.
 
-To work on design, open [https://localhost:4200/?mode=preview]
+To work on design, open https://localhost:4200/?mode=preview
 
 ## Want to Help?
 
