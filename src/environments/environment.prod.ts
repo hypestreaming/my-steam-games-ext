@@ -7,7 +7,7 @@ export const environment = {
 
 	version: '2022.09.16',
 
-	apiEndpoint: 'https://ec2v9styjl.execute-api.us-east-1.amazonaws.com/production/api',
+	apiEndpoint: 'https://sqfbaoi4nf.execute-api.us-east-1.amazonaws.com/production/api',
 };
 
 
